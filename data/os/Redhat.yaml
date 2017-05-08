@@ -1,0 +1,3 @@
+ssm_agent::osver: 'linux_amd64'
+ssm_agent::package_type: 'rpm'
+ssm_agent::install::provider: 'rpm'
