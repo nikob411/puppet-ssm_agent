@@ -1,12 +1,15 @@
-class ssm_agent::config (
-  String $systemd_file       = '/etc/systemd/system/amazon-ssm-agent.service',
-  String[Optional] $proxy    = undef,
-  String[Optional] $no_proxy = undef,
-){
-  if $proxy or $no_proxy {
-    file { $systemd_file:
+class ssm_agent::config {
+  File {
+    owner   => 'root',
+    group   => 'root',
+    require => Class['ssm_agent::install'],
+    notify  => Class['ssm_agent::service'],
+  }
+
+  if $ssm_agent::proxy or $ssm_agent::no_proxy {
+    file { $ssm_agent::systemd_file:
       ensure  => file,
-      content => template("${module_name}/amazon-ssm-agent.service.erb"),
+      content => template("${module_name}/amazon-ssm-agent.conf.erb"),
     }
   }
 }

@@ -45,12 +45,15 @@
 class ssm_agent (
   String $osver,
   String $package_type,
+  String $systemd_file,
+  Optional[String] $proxy,
+  Optional[String] $no_proxy,
 ){
   contain ssm_agent::install
-#  contain ssm_agent::config
+  contain ssm_agent::config
   contain ssm_agent::service
 
   Class['::ssm_agent::install']
-#  -> Class['::ssm_agent::config']
+  -> Class['::ssm_agent::config']
   ~> Class['::ssm_agent::service']
 }
