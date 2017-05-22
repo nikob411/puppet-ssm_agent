@@ -14,49 +14,74 @@
 
 ## Description
 
+The ssm agent module installs, configures, and manages the AWS ssm agent service across a range of operating systems and distributions.
 
 ## Setup
 
-### What ssm_agent affects **OPTIONAL**
-
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
-
-If there's more that they should know about, though, this is the place to mention:
-
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section
-here.
-
 ### Beginning with ssm_agent
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most
-basic use of the module.
+`include '::ssm_agent'` is enough to get you up and running. To pass in parameters specifying which download url to use: 
+
+```puppet
+class { '::ssm_agentntp':
+  ssm_agent_url => 'https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb',
+}
+```
 
 ## Usage
 
-This section is where you describe how to customize, configure, and do the
-fancy stuff with your module here. It's especially helpful if you include usage
-examples and code samples for doing things with your module.
+All parameters for the ntp module are contained within the main `::ssm_agent` class, so for any function of the module, set the options you want. See the common usages below for examples.
+
+### Install and enable SSM Agent
+
+```puppet
+include '::ssm_agent'
+```
+
+### Change SSM Agent download package
+
+```puppet
+class { '::ssm_agent':
+  ssm_agent_url => 'https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb',
+}
+```
+
+### Configuring SSM Agent to Use a Proxy
+
+```puppet
+class { '::ssm_agent':
+  http_proxy  => 'http://change.proxy.com:3128',
+  no_proxy    => '169.254.169.254',
+}
+```
+
+
+### Install at On-Premises
+```puppet
+class { '::ssm_agent::onpremises':
+  aws_access_key_id      => 'change your aws access key id',
+  aws_secret_access_key  => 'change your aws secret access key',
+  aws_output             => 'json',
+  aws_region             => 'us-west-2'
+}
+```
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+### Classes
+
+#### Public classes
+
+* ssm_agent: Main class, includes all other classes.
+
+#### Private classes
+
+* ssm_agent::install: Handles the packages.
+* ssm_agent::config: Handles the configuration file.
+* ssm_agent::service: Handles the service.
+* ssm_agent::onpremises: Handles the On-Premises setting.
+
+
 
 ## Limitations
 

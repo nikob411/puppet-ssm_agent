@@ -1,4 +1,4 @@
-class ssm_agent::config {
+class ssm_agent::config inherits ssm_agent {
   File {
     owner   => 'root',
     group   => 'root',

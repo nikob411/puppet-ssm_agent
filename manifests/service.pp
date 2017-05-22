@@ -1,7 +1,4 @@
-class ssm_agent::service(
-  Boolean $manage_service,
-  String $service_name,
-) {
+class ssm_agent::service inherits ssm_agent {
   if $manage_service {
     case $facts['os']['family'] {
       'Debian': {
