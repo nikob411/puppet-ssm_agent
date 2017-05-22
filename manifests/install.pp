@@ -15,6 +15,8 @@ class ssm_agent::install inherits ssm_agent {
   }
 
   package { 'ssm_agent':
+    name      => $ssm_agent::package_name,
+    ensure    => 'installed',
     provider  => $ssm_agent::package_provider,
     source    => $ssm_agent::ssm_tmp_file,
     subscribe => Exec['download_ssm-agent'],

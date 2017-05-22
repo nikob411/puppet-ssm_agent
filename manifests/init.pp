@@ -47,6 +47,7 @@ class ssm_agent (
   String $ssm_tmp_file,
   String $package_provider,
   String $package_type,
+  String $package_name,
   String $systemd_file,
   String $ssm_agent_url,
   Boolean $manage_service,
