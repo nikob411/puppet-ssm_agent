@@ -55,17 +55,6 @@ class { '::ssm_agent':
 }
 ```
 
-
-### Install at On-Premises
-```puppet
-class { '::ssm_agent::onpremises':
-  aws_access_key_id      => 'change your aws access key id',
-  aws_secret_access_key  => 'change your aws secret access key',
-  aws_output             => 'json',
-  aws_region             => 'us-west-2'
-}
-```
-
 ## Reference
 
 ### Classes
@@ -82,19 +71,36 @@ class { '::ssm_agent::onpremises':
 * ssm_agent::onpremises: Handles the On-Premises setting.
 
 
+## Parameters
 
-## Limitations
+The following parameters are available in the `::ssm_agent` class:
 
-This is where you list OS compatibility, version compatibility, etc. If there
-are Known Issues, you might want to include them under their own heading here.
+#### `ssm_agent_url`
 
-## Development
+Optional.
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+Data type: String.
 
-## Release Notes/Contributors/Etc. **Optional**
+The ssm agent download url
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel
-are necessary or important to include here. Please use the `## ` header.
+Default value: `https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/$OS_VER/amazon-ssm-agent.{dev,rpm}`.
+
+#### `proxy_install_manage`
+
+Optional.
+
+Data type: Boolean.
+
+Enables the use of agents to download the source code
+
+Default value: `false`
+
+#### `proxy_install_manage_timeout`
+
+Optional.
+
+Data type: String.
+
+Connect timeout use of agents to download the source code
+
+Default value: `3`
