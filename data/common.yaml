@@ -5,10 +5,12 @@ ssm_agent::service_name: 'amazon-ssm-agent'
 ssm_agent::systemd_file: '/etc/init/amazon-ssm-agent.conf'
 ssm_agent::http_proxy: ~
 ssm_agent::no_proxy: ~
+ssm_agent::proxy_install_manage: false
+ssm_agent::proxy_install_manage_timeout: '3'
 ssm_agent::onpremises::aws_dir: '/root/.aws'
 ssm_agent::onpremises::aws_config: '/root/.aws/config'
 ssm_agent::onpremises::aws_credentials: '/root/.aws/credentials'
 ssm_agent::onpremises::aws_access_key_id: ~
 ssm_agent::onpremises::aws_secret_access_key: ~
-ssm_agent::onpremises::aws_output: json
+ssm_agent::onpremises::aws_output: 'json'
 ssm_agent::onpremises::aws_region: ~

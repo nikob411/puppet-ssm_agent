@@ -1,22 +1,22 @@
 class ssm_agent::service inherits ssm_agent {
-  if $manage_service {
+  if $ssm_agent::manage_service {
     case $facts['os']['family'] {
       'Debian': {
-        service { $service_name:
+        service { $ssm_agent::service_name:
           ensure     => running,
           subscribe  => Package['ssm_agent'],
           require    => Class['ssm_agent::install'],
         }
       }
       default: {
-        service { $service_name:
+        service { $ssm_agent::service_name:
           ensure     => running,
           hasstatus  => true,
           hasrestart => true,
-          restart    => "/sbin/restart ${service_name}",
-          start      => "/sbin/start ${service_name}",
-          status     => "/sbin/status ${service_name}",
-          stop       => "/sbin/stop ${service_name}",
+          restart    => "/sbin/restart $ssm_agent::service_name",
+          start      => "/sbin/start $ssm_agent::service_name",
+          status     => "/sbin/status $ssm_agent::service_name",
+          stop       => "/sbin/stop $ssm_agent::service_name",
           subscribe  => Package['ssm_agent'],
           require    => Class['ssm_agent::install'],
         }

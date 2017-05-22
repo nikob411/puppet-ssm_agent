@@ -45,13 +45,15 @@
 class ssm_agent (
   String $osver,
   String $ssm_tmp_file,
-  String $provider,
+  String $package_provider,
   String $package_type,
   String $systemd_file,
   String $ssm_agent_url,
   Boolean $manage_service,
   String $service_name,
-  Optional[String] $proxy,
+  Boolean $proxy_install_manage,
+  String $proxy_install_manage_timeout,
+  Optional[String] $http_proxy,
   Optional[String] $no_proxy,
 ){
   contain ssm_agent::install
