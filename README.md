@@ -68,14 +68,12 @@ class { '::ssm_agent':
 * ssm_agent::install: Handles the packages.
 * ssm_agent::config: Handles the configuration file.
 * ssm_agent::service: Handles the service.
-* ssm_agent::onpremises: Handles the On-Premises setting.
-
 
 ## Parameters
 
 The following parameters are available in the `::ssm_agent` class:
 
-#### `ssm_agent_url`
+#### `ssm_agent_download_url`
 
 Optional.
 
