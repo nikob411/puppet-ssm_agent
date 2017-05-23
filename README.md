@@ -23,7 +23,7 @@ The ssm agent module installs, configures, and manages the AWS ssm agent service
 `include '::ssm_agent'` is enough to get you up and running. To pass in parameters specifying which download url to use: 
 
 ```puppet
-class { '::ssm_agentntp':
+class { '::ssm_agent':
   ssm_agent_url => 'https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb',
 }
 ```

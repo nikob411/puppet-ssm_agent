@@ -1,5 +1,5 @@
 ssm_agent::ssm_agent_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/%{hiera('ssm_agent::osver')}/amazon-ssm-agent.%{hiera('ssm_agent::package_type')}"
-ssm_agent::ssm_tmp_file: '/tmp/ssm_agent.install'
+ssm_agent::ssm_tmp_file: '/tmp/install_ssmagent'
 ssm_agent::package_name: 'amazon-ssm-agent'
 ssm_agent::manage_service: true
 ssm_agent::service_name: 'amazon-ssm-agent'
