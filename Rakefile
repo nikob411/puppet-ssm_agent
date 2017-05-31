@@ -4,7 +4,7 @@ require 'puppet_blacksmith/rake_tasks' if Bundler.rubygems.find_name('puppet-bla
 
 PuppetLint.configuration.fail_on_warnings = true
 PuppetLint.configuration.send('relative')
-PuppetLint.config.disable_checks = ['140chars']
+PuppetLint.configuration.send("disable_140chars")
 
 desc 'Generate pooler nodesets'
 task :gen_nodeset do
