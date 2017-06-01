@@ -6,6 +6,7 @@ script:
   - bundle exec rake release_checks
 before_install:
   - gem update bundler
+  - gem install facter
 matrix:
   fast_finish: true
   include:
