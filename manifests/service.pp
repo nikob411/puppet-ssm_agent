@@ -1,6 +1,6 @@
 class ssm_agent::service inherits ssm_agent {
   if $ssm_agent::manage_service {
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'Debian': {
         service { $ssm_agent::service_name:
           ensure    => running,

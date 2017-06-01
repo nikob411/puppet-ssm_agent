@@ -1,1 +1,0 @@
-include ::ssm_agent
