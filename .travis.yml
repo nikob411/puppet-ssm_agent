@@ -1,10 +1,11 @@
 sudo: false
 language: ruby
 cache: bundler
-script: bundle exec rake release_checks
+script: 
+  - facter os
+  - bundle exec rake release_checks
 before_install:
   - gem update bundler
-  - facter os
 matrix:
   fast_finish: true
   include:
