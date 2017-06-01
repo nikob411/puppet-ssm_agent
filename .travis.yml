@@ -3,7 +3,8 @@ language: ruby
 cache: bundler
 script: bundle exec rake release_checks
 before_install:
-- gem update bundler
+  - gem update bundler
+  - facter os
 matrix:
   fast_finish: true
   include:
