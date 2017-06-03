@@ -8,6 +8,13 @@ class ssm_agent::service inherits ssm_agent {
           require   => Class['ssm_agent::install'],
         }
       }
+      'RedHat': {
+        service { $ssm_agent::service_name:
+          ensure    => running,
+          subscribe => Package['ssm_agent'],
+          require   => Class['ssm_agent::install'],
+        }
+      }
       default: {
         service { $ssm_agent::service_name:
           ensure     => running,
