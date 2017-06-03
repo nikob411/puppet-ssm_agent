@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/shazi7804/puppet-ssm_agent.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-ssm_agent)
 # ssm_agent
 
 #### Table of Contents
