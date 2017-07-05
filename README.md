@@ -1,5 +1,5 @@
 # ssm_agent
-[![Build Status](https://travis-ci.org/shazi7804/puppet-ssm_agent.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-ssm_agent)
+[![Build Status](https://travis-ci.org/shazi7804/puppet-ssm_agent.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-ssm_agent) [![Puppet Forge](https://img.shields.io/puppetforge/dt/shazi7804/puppet-ssm_agent.svg?style=flat-square)](https://forge.puppet.com/shazi7804/puppet-ssm_agent) [![Puppet Forge](https://img.shields.io/puppetforge/v/shazi7804/puppet-ssm_agent.svg?style=flat-square)](https://forge.puppet.com/shazi7804/puppet-ssm_agent)
 
 #### Table of Contents
 
