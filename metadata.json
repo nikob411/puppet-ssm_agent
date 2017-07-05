@@ -1,7 +1,7 @@
 {
   "name": "shazi7804-ssm_agent",
   "description": "ssm agent Module for Debian, Ubuntu, CentOS and RHEL.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "shazi7804",
   "summary": "Install, deploysm, and configures ssm agent services.",
   "license": "Apache-2.0",
