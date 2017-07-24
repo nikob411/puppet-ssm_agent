@@ -5,8 +5,6 @@
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with ssm_agent](#setup)
-    * [What ssm_agent affects](#what-ssm_agent-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with ssm_agent](#beginning-with-ssm_agent)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
