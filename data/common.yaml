@@ -9,5 +9,4 @@ ssm_agent::service_name: 'amazon-ssm-agent'
 ssm_agent::systemd_file: '/etc/init/amazon-ssm-agent.conf'
 ssm_agent::http_proxy: ~
 ssm_agent::no_proxy: ~
-ssm_agent::proxy_install_manage: false
-ssm_agent::proxy_install_manage_timeout: '60'
+ssm_agent::http_proxy_timeout: '60'

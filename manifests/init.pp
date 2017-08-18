@@ -52,8 +52,7 @@ class ssm_agent (
   String $ssm_agent_download_url,
   Boolean $manage_service,
   String $service_name,
-  Boolean $proxy_install_manage,
-  String $proxy_install_manage_timeout,
+  Integer $http_proxy_timeout,
   Optional[String] $http_proxy,
   Optional[String] $no_proxy,
 ){

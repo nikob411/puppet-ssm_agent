@@ -6,8 +6,8 @@ stop on (runlevel [!345] or stopping network)
 
 respawn
 
-<% if scope.lookupvar('ssm_agent::proxy') -%>
-env http_proxy=<%= scope.lookupvar('ssm_agent::proxy') %>
+<% if scope.lookupvar('ssm_agent::http_proxy') -%>
+env http_proxy=<%= scope.lookupvar('ssm_agent::http_proxy') %>
 <% end -%>
 <% if scope.lookupvar('ssm_agent::no_proxy') -%>
 env no_proxy=<%= scope.lookupvar('ssm_agent::no_proxy') %>
